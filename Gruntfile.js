@@ -93,7 +93,7 @@ module.exports = function(grunt) {
                 },
                 options: {
                     watchTask: true,
-                    proxy: "localhost:63342/AFT-Notes-MVC/public/"
+                    proxy: "localhost:63342/AFT-Notes-MVC/public/" //enter your proxy
                 }
             }
         }
