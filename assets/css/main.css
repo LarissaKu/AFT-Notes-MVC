@@ -1,0 +1,108 @@
+/*----------------------GENERAL------------------------*/
+body {
+  background-color: #e9ebea;
+  font-family: Barlow;
+}
+h1 {
+  color: #6c757d;
+  background-color: cadetblue;
+}
+a {
+  color: #009788;
+}
+a :hover {
+  color: mediumvioletred;
+}
+/*-----------------------NAV----------------------------*/
+nav {
+  margin-left: 6em;
+  margin-right: 6em;
+}
+#logOff {
+  float: right;
+  flex-wrap: wrap;
+  margin-right: 9em;
+  padding-top: 0.5em;
+}
+/*-----------------------FILTER----------------------------*/
+.filter {
+  align-items: baseline;
+}
+.btn-outline-secondary {
+  border-color: #009788;
+  color: black;
+  margin-left: 1em;
+}
+.btn-outline-secondary:hover {
+  background-color: mediumvioletred;
+  border: mediumvioletred;
+}
+.btn-secondary {
+  background-color: #009788;
+  margin-left: 1em;
+}
+.btn-secondary:hover {
+  background-color: mediumvioletred;
+  border-color: mediumvioletred;
+}
+#aToZ {
+  margin-left: 1em;
+}
+#date {
+  margin-left: 1em;
+}
+.custom-control-label {
+  margin-left: 1em;
+}
+/*-----------------------ADD NOTE----------------------------*/
+.addNote {
+  margin-left: 6em;
+}
+/*-----------------------CARDS----------------------------*/
+.card {
+  max-width: 18rem;
+  margin: 0.5em;
+  flex: auto;
+  justify-content: space-around;
+  animation-name: bounceIn;
+  animation-duration: 2s;
+}
+.card-body a {
+  flex-wrap: wrap;
+}
+.footer i {
+  margin-left: 0.5em;
+  color: #6c757d;
+}
+.col-4,
+.col-3 {
+  margin: 0!important;
+  margin-right: 0.5em !important;
+  padding: 0;
+}
+/*-------------------------EDIT-------------------------------*/
+.edit-field,
+.update-field {
+  border-style: dashed;
+  border-color: #009788;
+  background-color: rgba(0, 151, 136, 0.2);
+  width: 75%;
+}
+/*-------------------------PSEUDO ELEMENT----------------------*/
+.edit::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\f044";
+  margin-right: 0.5em;
+}
+/*-------------------------ANIMATION----------------------------*/
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

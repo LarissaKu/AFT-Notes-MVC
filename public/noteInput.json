@@ -1,0 +1,81 @@
+{
+  "notes" : [
+    {
+      "id": 1,
+      "cardTitle": "Theater",
+      "badge": "Normal",
+      "cardBody": "Currently on Broadway - Dear Evan Hansen, Waitress, Rent, Anastasia...",
+      "tag": [1,2,3],
+      "contact": [2]
+
+    },
+    {
+      "id": 2,
+      "cardTitle": "Details",
+      "badge": "Hoch",
+      "cardBody": "Alle Buchungsdetails rund um Flug, Hotel und mehr - Mariott/Hotel: ...",
+      "tag": [1,4,5,6],
+      "contact": [1,2,4]
+    },
+    {
+      "id": 3,
+      "cardTitle": "Sightseeing",
+      "badge": "Niedrig",
+      "cardBody": "Was wir uns unbedingt ansehen müssen Sehenswürdigkeiten: Stat...",
+      "tag": [1,7,8],
+      "contact": []
+    }
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "tagName": "#NYCity"
+    },
+    {
+      "id": 2,
+      "tagName": "#theater"
+    },
+    {
+      "id": 3,
+      "tagName": "#shows"
+    },
+    {
+      "id": 4,
+      "tagName": "#hotel"
+    },
+    {
+      "id": 5,
+      "tagName": "#tickets"
+    },
+    {
+      "id": 6,
+      "tagName": "#flight"
+    },
+    {
+      "id": 7,
+      "tagName": "#sights"
+    },
+    {
+      "id": 8,
+      "tagName": "#food"
+    }
+  ],
+  "contact": [
+    {
+      "id": 1,
+      "contactAddress": "maxmustermann@gmail.com"
+    },
+    {
+      "id": 2,
+      "contactAddress": "johnbrad@gmail.com"
+    },
+    {
+      "id": 3,
+      "contactAddress": "manifred@gmail.com"
+    },
+    {
+      "id": 4,
+      "contactAddress": "joker@gmail.com"
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--main.css-->
+    <link rel="stylesheet" href="main.css">
+    <!--Fontawesome-->
+    <link rel="stylesheet"href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"/>
+    <!--Google Font-->
+    <link href="https://fonts.googleapis.com/css?family=Barlow&display=swap" rel="stylesheet">
+
+    <title>Notes</title>
+</head>
+
+<body>
+<header>
+    <h1 class="display-3 text-center">Notes</h1>
+    <!--LogOut-->
+    <a id="logOff" href="#">
+        <i class="fas fa-sign-out-alt"></i>
+        Abmelden
+    </a>
+    <nav>
+        <div class="nav nav-tabs" id="nav-home" role="tablist">
+            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="index.html"
+               role="tab" aria-controls="nav-home" aria-selected="true">
+                <i class="fas fa-home"></i> Übersicht
+            </a>
+            <a class="nav-item nav-link" id="nav-archive-tab" data-toggle="tab" href="#"
+               role="tab" aria-controls="nav-archive" aria-selected="false">
+                <i class="fas fa-archive"></i> Archiv
+            </a>
+        </div>
+    </nav>
+
+</header>
+<main>
+    <div class="filter container-fluid row d-flex justify-content-center mb-2 mt-3">
+        <p mr-3>Filtern nach: </p>
+
+        <!--A-Z-->
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="aToZ" name="filter" class="custom-control-input">
+            <label class="custom-control-label" for="aToZ">A-Z</label>
+        </div>
+
+        <!--Date-->
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="date" name="filter" class="custom-control-input">
+            <label class="custom-control-label" for="date">Datum</label>
+        </div>
+        <!--Dropdown Priority-->
+        <div class="dropdown">
+            <button class="btn btn-outline-secondary dropdown-toggle"
+                    type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Priorität
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Hoch</a>
+                <a class="dropdown-item" href="#">Normal</a>
+                <a class="dropdown-item" href="#">Niedrig</a>
+            </div>
+
+            <!--Remove filter-->
+            <button class="btn btn-outline-secondary">
+                Alle Filter aufheben
+            </button>
+
+            <!--Create new note-->
+            <button class="btn btn-secondary addNote">
+                <i class="fas fa-plus"></i>
+                Neue Notiz hinzufügen
+            </button>
+        </div>
+
+        <!--CreateNote-field-->
+        <div class="edit-field container-fluid m-5 justify-content-center d-none">
+            <h1>Notiz erstellen</h1>
+
+            <!---Enter title-->
+            <div class="tags-block">
+                <label for="title" class="m-0 Notiztitel pl-1">Titel*</label>
+                <input type="text" class="form-control" id="title">
+
+                <!---Enter content-->
+                <label for="content" class="m-0 Notiztitel pl-1 mt-3 mb-1">Beschreibung hinzufügen*</label>
+                <textarea class="form-control" id="content" rows="9" content=""></textarea>
+
+                <!---Enter priority-->
+                <div>
+                    <h3 class="mt-4">Priorität hinzufügen*</h3>
+                    <form class="form-check" id="prio">
+                        <input class="form-check-input" type="radio" name="prio" id="high" value="Hoch"/>Hoch<br />
+                        <input class="form-check-input" type="radio" name="prio" id="normal" value="Normal"/>Normal<br />
+                        <input class="form-check-input" type="radio" name="prio" id="low" value="Niedrig"/>Niedrig<br />
+                    </form>
+                </div>
+
+                <!--CONTACT-->
+                <!---Add contact-->
+                <h3 class="mt-4">Benutzer zu Notiz hinzufügen</h3>
+                <div class="contact-list d-inline-block"></div>
+                <br/>
+                </br>
+
+                <!--Create Contact-->
+                <label for="contactName" class="m-0 Notiztitel pl-1 mt-3 mb-1">Benutzer erstellen</label>
+                <input type="text" class="form-control" id="contactName"
+                       placeholder="Gib hier eine Mailadresse ein - z.B.: susimusterfrau@example.com">
+                <button class="btn btn-outline-secondary m-3 createContact">Benutzer hinzufügen</button>
+                <!--Delete Tag-->
+                <button class="btn btn-outline-secondary m-3 deleteContact">Benutzer löschen</button>
+
+                <!--TAGS-->
+                <!---Add tags-->
+                <h3 class="mt-4">Tags zu Notiz hinzufügen</h3>
+                <div class="tags-list d-inline-block"></div>
+                </br>
+                </br>
+
+                <!--Create Tag-->
+                <label for="tagName" class="m-0 Notiztitel pl-1 mt-3 mb-1">Tag erstellen</label>
+                <input type="text" class="form-control" id="tagName"
+                       placeholder="Gib hier einen Tag ein - z.B.: #nature">
+                <button class="btn btn-outline-secondary m-3 createTag">Tag erstellen</button>
+                <!--Delete Tag-->
+                <button class="btn btn-outline-secondary m-3 deleteTag">Tag löschen</button>
+                </br>
+                <button class="btn btn-secondary mt-5 mb-3 ml-0
+                 text-right createNote">Notiz erstellen</button>
+            </div>
+        </div>
+
+        <!--EditNote-field-->
+        <div class="update-field container-fluid m-5 justify-content-center d-none">
+            <h1>Notiz bearbeiten</h1>
+
+            <!---Enter title-->
+            <div class="tags-block">
+                <label for="title" class="m-0 Notiztitel pl-1">Titel*</label>
+                <input type="text" class="form-control" id="titleUpdate">
+
+                <!---Enter content-->
+                <label for="content" class="m-0 Notiztitel pl-1 mt-3 mb-1">Beschreibung hinzufügen*</label>
+                <textarea class="form-control" id="contentUpdate" rows="9" content=""></textarea>
+
+                <!---Enter priority-->
+                <div>
+                    <h3 class="mt-4">Priorität hinzufügen*</h3>
+                    <form class="form-check" id="prioUpdate">
+                        <input class="form-check-input" type="radio" name="prioUpdate" id="highUpdate" value="Hoch"/>Hoch<br />
+                        <input class="form-check-input" type="radio" name="prioUpdate" id="normalUpdate" value="Normal"/>Normal<br />
+                        <input class="form-check-input" type="radio" name="prioUpdate" id="lowUpdate" value="Niedrig"/>Niedrig<br />
+                    </form>
+                </div>
+
+                <!--CONTACT-->
+                <!---Add contact-->
+                <h3 class="mt-4">Benutzer zu Notiz hinzufügen</h3>
+                <div class="contact-Edit d-inline-block"></div>
+                <br/>
+                </br>
+
+                <!--Create Contact-->
+                <label for="contactName" class="m-0 Notiztitel pl-1 mt-3 mb-1">Benutzer erstellen</label>
+                <input type="text" class="form-control" id="contactNameUpdate"
+                       placeholder="Gib hier eine Mailadresse ein - z.B.: susimusterfrau@example.com">
+                <button class="btn btn-outline-secondary m-3 createContact">Benutzer hinzufügen</button>
+                <!--Delete Tag-->
+                <button class="btn btn-outline-secondary m-3 deleteContact">Benutzer löschen</button>
+
+                <!--TAGS-->
+                <!---Add tags-->
+                <h3 class="mt-4">Tags zu Notiz hinzufügen</h3>
+                <div class="tags-Edit d-inline-block"></div>
+                </br>
+                </br>
+
+                <!--Create Tag-->
+                <label for="tagName" class="m-0 Notiztitel pl-1 mt-3 mb-1">Tag erstellen</label>
+                <input type="text" class="form-control" id="tagNameUpdate"
+                       placeholder="Gib hier einen Tag ein - z.B.: #nature">
+                <button class="btn btn-outline-secondary m-3 createTag">Tag erstellen</button>
+                <!--Delete Tag-->
+                <button class="btn btn-outline-secondary m-3 deleteTag">Tag löschen</button>
+                </br>
+                <button class="btn btn-secondary mt-5 mb-3 ml-0
+                text-right updateNote">Notiz ändern</button>
+            </div>
+
+        </div>
+
+        <!--Cards-->
+        <div class="cardsRow1 note-section container-fluid row d-flex justify-content-center m-1">
+        </div>
+    </div>
+</main>
+
+<!--JavaScript-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script type="text/javascript" src="../assets/js/button.js"></script>
+<script type="module" src="../assets/js/main.js"></script>
+</body>
+</html>
